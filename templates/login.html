@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="loginApp">
+  <head>
+    <script src="/static/js/angular/angular.js"> </script>
+    <script type="text/javascript" src="/static/login.js"></script>
+    <title>on top</title>
+  </head>
+
+  <body>
+    <div ng-controller="LoginController">
+      <div ng-show="loginForm">
+        <form novalidate class="simple-form">
+          Name: <input type="text" ng-model="user.name" /><br />
+          Password: <input type="password" ng-model="user.password" /><br />
+          <button ng-click="login(user)">Login</button>
+          <button ng-click="reset()">Reset</button>
+        </form>
+      </div>
+      <div ng-show="indexView">
+        <div ng-include src="'static/partials/index.html'"></div>
+      </div>
+    </div>
+  </body>
+</html>
